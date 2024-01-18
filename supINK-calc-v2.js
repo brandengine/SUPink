@@ -1,6 +1,4 @@
-<script type="text/javascript">
-
-var productQTY, colorAmount, result, productPRICE, displayResult, totalPRICE, carbonINK, puffINK, metalINK, fLOC, bLOC, sleeveDEC, neckTAG, printLOCs, hpResult, hpDisplayResult, hpQTY; 
+var productQTY, colorAmount, result, productPRICE, displayResult, totalPRICE, carbonINK, puffINK, metalINK, fLOC, bLOC, sleeveDEC, neckTAG, printLOCs; 
 
 //input
 
@@ -49,26 +47,6 @@ var RUSHfive = document.getElementById("5-6-DAY-TURN");
 var RUSHseven = document.getElementById("7-9-DAY-TURN");
 var RUSHzero = document.getElementById("No-Rush");
 
-//HEAT PRESS START
-var hpQTY = document.getElementById("Transfer-QTY");
-var hpSMALL = document.getElementById("Small-Print");
-var hpLCHEST = document.getElementById("Left-Chest-Print");
-var hpMED = document.getElementById("Medium-Print");
-var hpLRG = document.getElementById("Large-Print");
-var hpXL = document.getElementById("Extra-Large-Print");
-//HEAT PRESS shipping
-var hpRUSHTHREE = document.getElementById("HP-3-4-DAY-TURN");
-var hpRUSHFIVE = document.getElementById("HP-5-6-DAY-TURN");
-var hpRUSHSEVEN = document.getElementById("HP-7-9-DAY-TURN");
-var hpRUSHZERO = document.getElementById("HP-No-Rush");
-
-
-//HEAT PRESS assign value
-hpSMALL.value = Number(7.65);
-hpLCHEST.value = Number(8.10);
-hpMED.value = Number(9.70);
-hpLRG.value = Number(11.45);
-hpXL.value = Number(15.10);
 
 //set price
 var productPRICE = Number({{wf {&quot;path&quot;:&quot;price&quot;,&quot;type&quot;:&quot;Number&quot;\} }});
@@ -108,30 +86,11 @@ document.getElementById("5-6-DAY-TURN").addEventListener("change", update);
 document.getElementById("7-9-DAY-TURN").addEventListener("change", update);
 document.getElementById("No-Rush").addEventListener("change", update);
 
-//HEAT PRESS OPTIONS
-document.getElementById("Transfer-QTY").addEventListener("change", update);
-document.getElementById("Small-Print").addEventListener("change", update);
-document.getElementById("Left-Chest-Print").addEventListener("change", update);
-document.getElementById("Medium-Print").addEventListener("change", update);
-document.getElementById("Large-Print").addEventListener("change", update);
-document.getElementById("Extra-Large-Print").addEventListener("change", update);
-//HEAT PRESS SHIPPING
-document.getElementById("HP-3-4-DAY-TURN").addEventListener("change", update);
-document.getElementById("HP-5-6-DAY-TURN").addEventListener("change", update);
-document.getElementById("HP-7-9-DAY-TURN").addEventListener("change", update);
-document.getElementById("HP-No-Rush").addEventListener("change", update);
-
-
-
-//set display ID
+//set defaults
 
 console.log("has fired");
 displayResult = document.getElementById("display-number");
-hpDisplayResult = document.getElementById("HP-display-number");
-
-//set defaults
 displayResult.textContent = Number(productPRICE) + Number(5.00);
-hpDisplayResult.textContent = Number(productPRICE) + Number(hpSMALL.value);
 
 function update(){
 
@@ -198,19 +157,7 @@ RUSHfive = document.getElementById("5-6-DAY-TURN");
 RUSHseven = document.getElementById("7-9-DAY-TURN");
 RUSHzero = document.getElementById("No-Rush");
 
-//HEAT PRESS OPTIONS
-hpQTY = document.getElementById("Transfer-QTY").value;
-hpSMALL = document.getElementById("Small-Print");
-hpLCHEST = document.getElementById("Left-Chest-Print");
-hpMED = document.getElementById("Medium-Print");
-hpLRG = document.getElementById("Large-Print");
-hpXL = document.getElementById("Extra-Large-Print");
-hpRUSHTHREE = document.getElementById("HP-3-4-DAY-TURN");
-hpRUSHFIVE = document.getElementById("HP-5-6-DAY-TURN");
-hpRUSHSEVEN = document.getElementById("HP-7-9-DAY-TURN");
-hpRUSHZERO = document.getElementById("HP-No-Rush");
-
-//PRINT CALC     
+//CALC     
 result = ((Number(colorAmount) * Number(productQTY)) + productPRICE) * printLOCs;
 
 //ink CALC
@@ -283,13 +230,5 @@ result = ((Number(colorAmount) * Number(productQTY)) + productPRICE) * printLOCs
 
 
   displayResult.textContent = result.toFixed(2);
-
-  //HEAT PRESS CALC
-
-  hpResult = Number(hpQTY) + productPRICE;
-
-  hpDisplayResult.textContent = hpResult.toFixed(2);
  
 }
-
-</script>
