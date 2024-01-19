@@ -85,7 +85,7 @@ var hpRUSHSEVEN = document.getElementById("HP-7-9-DAY-TURN");
 var hpRUSHZERO = document.getElementById("HP-No-Rush");
 
 //set price WF VAR
-var productPRICE = Number(4.95);
+var productPRICE = parseFloat(4.95);
 
 // add listener
 document.getElementById("product-QTY").addEventListener("change", update);
@@ -178,8 +178,8 @@ hpDisplayResult = document.getElementById("HP-display-number");
 emDisplayResult = document.getElementById("EM-display-number");
 
 //set defaults
-displayResult.textContent = (Number(productPRICE) + Number(5.00)).toFixed(2);
-hpDisplayResult.textContent = (Number(productPRICE) + Number(7.95)).toFixed(2);
+displayResult.textContent = (parseFloat(productPRICE) + parseFloat(5.00)).toFixed(2);
+hpDisplayResult.textContent = (parseFloat(productPRICE) + parseFloat(7.95)).toFixed(2);
 
 function update(){
 
@@ -194,16 +194,29 @@ frontDEC = document.getElementById("Front-Decoration");
 backDEC = document.getElementById("Back-Decoration");
 sleeveDEC = document.getElementById("Sleeve-Decoration");
 otherDEC = document.getElementById("Other-Location-Decoration");
-
 //checkboxes LOCATIONS Logic
-fLOC = frontDEC.checked ? 1 : 0;
-bLOC = backDEC.checked ? 1 : 0;
-sLOC = sleeveDEC.checked ? 1 : 0;
-oLOC = otherDEC.checked ? 1 : 0;
+   if (frontDEC.checked === true) {
+         fLOC = parseFloat(1); } else {
+            fLOC = parseFloat(0);
+         }
+   if (backDEC.checked === true) {
+         bLOC = parseFloat(1);} else {
+            bLOC = parseFloat(0);
+         }
 
-   printLOCs = Number(fLOC) + Number(bLOC) + Number(sLOC) + Number(oLOC);
+   if (sleeveDEC.checked === true) {
+         sLOC = parseFloat(1);} else {
+            sLOC = parseFloat(0);
+         }
+
+   if (otherDEC.checked === true) {
+         oLOC = parseFloat(1);} else {
+            oLOC = parseFloat(0);
+         }
+
+   printLOCs = parseFloat(fLOC) + parseFloat(bLOC) + parseFloat(sLOC) + parseFloat(oLOC);
    if (printLOCs < 2){
-      printLOCs= Number(1)
+      printLOCs= parseFloat(1)
    }
 
 //tagging OPTIONS
@@ -277,179 +290,179 @@ hpRUSHSEVEN = document.getElementById("HP-7-9-DAY-TURN");
 hpRUSHZERO = document.getElementById("HP-No-Rush");
 
 //PRINT CALC     
-result = ((Number(colorAmount) * Number(productQTY)) + productPRICE) * printLOCs;
+result = ((parseFloat(colorAmount) * parseFloat(productQTY)) + productPRICE) * printLOCs;
 
 //ink CALC
  if (carbonINK.checked === true) {
-    result = Number(result) + (Number(0.25) * Number(printLOCs));
+    result = parseFloat(result) + (parseFloat(0.25) * parseFloat(printLOCs));
   }
  if (metalINK.checked === true) {
-    result = Number(result) + (Number(0.25) * Number(printLOCs));
+    result = parseFloat(result) + (parseFloat(0.25) * parseFloat(printLOCs));
   }
  if (puffINK.checked === true) {
-    result = Number(result) + (Number(0.25) * Number(printLOCs));
+    result = parseFloat(result) + (parseFloat(0.25) * parseFloat(printLOCs));
   }
 //tag CALC
  if (neckTAG.checked === true) {
-    result = Number(result) + Number(1.60);
+    result = parseFloat(result) + parseFloat(1.60);
   }
   if (printTAG.checked === true) {
-    result = Number(result) + Number(1.80);
+    result = parseFloat(result) + parseFloat(1.80);
   }
   if (cutTAG.checked === true) {
-    result = Number(result) + Number(0.30);
+    result = parseFloat(result) + parseFloat(0.30);
   }
 //fold CALC
   if (foldOPT.checked === true) {
-    result = Number(result) + Number(0.40);
+    result = parseFloat(result) + parseFloat(0.40);
   }
   if (foldBAG.checked === true) {
-    result = Number(result) + Number(0.80);
+    result = parseFloat(result) + parseFloat(0.80);
   }
   if (bandTAG.checked === true) {
-    result = Number(result) + Number(0.70);
+    result = parseFloat(result) + parseFloat(0.70);
   }
 //sewing CALC
   if (wLABEL.checked === true) {
-    result = Number(result) + Number(1.00);
+    result = parseFloat(result) + parseFloat(1.00);
   }
   if (hTag.checked === true) {
-    result = Number(result) + Number(0.25);
+    result = parseFloat(result) + parseFloat(0.25);
   }
   if (sideSEW.checked === true) {
-    result = Number(result) + Number(3.50);
+    result = parseFloat(result) + parseFloat(3.50);
   }
   if (seamRIP.checked === true) {
-    result = Number(result) + Number(2);
+    result = parseFloat(result) + parseFloat(2);
   }
   if (seamCAPS.checked === true) {
-    result = Number(result) + Number(2.50);
+    result = parseFloat(result) + parseFloat(2.50);
   }
   //sticker CALC
   if (UPCstick.checked === true) {
-    result = Number(result) + Number(0.15);
+    result = parseFloat(result) + parseFloat(0.15);
   }
   //shipping CALC
   if (RUSHone.checked === true) {
-    result = Number(result) * Number(2);
+    result = parseFloat(result) * parseFloat(2);
   }
   if (RUSHthree.checked === true) {
-    result = Number(result) * Number(1.5);
+    result = parseFloat(result) * parseFloat(1.5);
   }
    if (RUSHfive.checked === true) {
-    result = Number(result) * Number(1.3);
+    result = parseFloat(result) * parseFloat(1.3);
   }
    if (RUSHseven.checked === true) {
-    result = Number(result) * Number(1.2);
+    result = parseFloat(result) * parseFloat(1.2);
   }
     if (RUSHzero.checked === true) {
-    result = Number(result) * Number(1);
+    result = parseFloat(result) * parseFloat(1);
   }
 
   displayResult.textContent = result.toFixed(2);
 
 //Embroidery CALC
-  emResult = productPRICE + Number(emQTY);
+  emResult = productPRICE + parseFloat(emQTY);
   
 //tag CALC
   if (emneckTAG.checked === true) {
-    emResult = Number(emResult) + Number(1.60);
+    emResult = parseFloat(emResult) + parseFloat(1.60);
   }
   if (emprintTAG.checked === true) {
-    emResult = Number(emResult) + Number(1.80);
+    emResult = parseFloat(emResult) + parseFloat(1.80);
   }
   if (emcutTAG.checked === true) {
-    emResult = Number(emResult) + Number(0.30);
+    emResult = parseFloat(emResult) + parseFloat(0.30);
   }
 //fold CALC
   if (emfoldOPT.checked === true) {
-    emResult = Number(emResult) + Number(0.40);
+    emResult = parseFloat(emResult) + parseFloat(0.40);
   }
   if (emfoldBAG.checked === true) {
-    emResult = Number(emResult) + Number(0.80);
+    emResult = parseFloat(emResult) + parseFloat(0.80);
   }
   if (embandTAG.checked === true) {
-    emResult = Number(emResult) + Number(0.70);
+    emResult = parseFloat(emResult) + parseFloat(0.70);
   }
 //sewing CALC
   if (emwLABEL.checked === true) {
-    emResult = Number(emResult) + Number(1.00);
+    emResult = parseFloat(emResult) + parseFloat(1.00);
   }
   if (emhTag.checked === true) {
-    emResult = Number(emResult) + Number(0.25);
+    emResult = parseFloat(emResult) + parseFloat(0.25);
   }
   if (emsideSEW.checked === true) {
-    emResult = Number(emResult) + Number(3.50);
+    emResult = parseFloat(emResult) + parseFloat(3.50);
   }
   if (emseamRIP.checked === true) {
-    emResult = Number(emResult) + Number(2);
+    emResult = parseFloat(emResult) + parseFloat(2);
   }
   if (emseamCAPS.checked === true) {
-    emResult = Number(emResult) + Number(2.50);
+    emResult = parseFloat(emResult) + parseFloat(2.50);
   }
 //sticker CALC
   if (emUPCstick.checked === true) {
-    emResult = Number(emResult) + Number(0.15);
+    emResult = parseFloat(emResult) + parseFloat(0.15);
   }
 //application CALC
   if (emSOLVY.checked === true) {
-    emResult = Number(emResult) + Number(0.75);
+    emResult = parseFloat(emResult) + parseFloat(0.75);
   }
    if (emPATCHAPP.checked === true) {
-    emResult = Number(emResult) + Number(5.00);
+    emResult = parseFloat(emResult) + parseFloat(5.00);
   }
 //shipping CALC
   if (emRUSHone.checked === true) {
-    emResult = Number(emResult) * Number(2);
+    emResult = parseFloat(emResult) * parseFloat(2);
   }
   if (emRUSHthree.checked === true) {
-    emResult = Number(emResult) * Number(1.5);
+    emResult = parseFloat(emResult) * parseFloat(1.5);
   }
    if (emRUSHfive.checked === true) {
-    emResult = Number(emResult) * Number(1.3);
+    emResult = parseFloat(emResult) * parseFloat(1.3);
   }
    if (emRUSHseven.checked === true) {
-    emResult = Number(emResult) * Number(1.2);
+    emResult = parseFloat(emResult) * parseFloat(1.2);
   }
     if (emRUSHzero.checked === true) {
-    emResult = Number(emResult) * Number(1);
+    emResult = parseFloat(emResult) * parseFloat(1);
   }
 
   emDisplayResult.textContent = emResult.toFixed(2);
 
 
 //HEAT PRESS CALC
-  hpSize = Number(7.65);
+  hpSize = parseFloat(7.65);
   if (hpLCHEST.checked === true) {
-    hpSize = Number(8.10);
+    hpSize = parseFloat(8.10);
   }
   if (hpMED.checked === true) {
-    hpSize = Number(9.70);
+    hpSize = parseFloat(9.70);
   }
   if (hpLRG.checked === true) {
-    hpSize = Number(11.45);
+    hpSize = parseFloat(11.45);
   }
   if (hpXL.checked === true) {
-    hpSize = Number(15.10);
+    hpSize = parseFloat(15.10);
   }
   if (hpSMALL.checked === true) {
-    hpSize = Number(7.65);
+    hpSize = parseFloat(7.65);
   }
 
-  hpResult = productPRICE + (Number(hpQTY) * Number(hpSize));
+  hpResult = productPRICE + (parseFloat(hpQTY) * parseFloat(hpSize));
 
 //shipping CALC
     if (hpRUSHTHREE.checked === true) {
-    hpResult = Number(hpResult) * Number(1.8);
+    hpResult = parseFloat(hpResult) * parseFloat(1.8);
   }
    if (hpRUSHFIVE.checked === true) {
-    hpResult = Number(hpResult) * Number(1.5);
+    hpResult = parseFloat(hpResult) * parseFloat(1.5);
   }
    if (hpRUSHSEVEN.checked === true) {
-    hpResult = Number(hpResult) * Number(1.3);
+    hpResult = parseFloat(hpResult) * parseFloat(1.3);
   }
     if (hpRUSHZERO.checked === true) {
-    hpResult = Number(hpResult) * Number(1);
+    hpResult = parseFloat(hpResult) * parseFloat(1);
   }
    
 
