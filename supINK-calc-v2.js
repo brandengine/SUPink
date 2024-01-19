@@ -1,5 +1,3 @@
-<script type="text/javascript">
-
 var productQTY, colorAmount, result, productPRICE, displayResult, totalPRICE, carbonINK, puffINK, metalINK, fLOC, bLOC, sleeveDEC, neckTAG, printLOCs, hpResult, hpDisplayResult, hpQTY; 
 
 //input
@@ -292,4 +290,3 @@ result = ((Number(colorAmount) * Number(productQTY)) + productPRICE) * printLOCs
  
 }
 
-</script>
