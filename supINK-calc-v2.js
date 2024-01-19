@@ -204,7 +204,14 @@ hpRUSHSEVEN = document.getElementById("HP-7-9-DAY-TURN");
 hpRUSHZERO = document.getElementById("HP-No-Rush");
 
 //Element Hiding
-
+   if (transDECOR.checked === true) {
+    document.getElementById("hp-panel").style.visibility = "visible";
+    document.getElementById("HP-display-number").style.visibility = "visible";
+  }
+   else {
+    document.getElementById("hp-panel").style.visibility = "hidden";
+    document.getElementById("HP-display-number").style.visibility = "hidden";
+   }
 
 //PRINT CALC     
 result = ((Number(colorAmount) * Number(productQTY)) + productPRICE) * printLOCs;
