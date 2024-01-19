@@ -49,7 +49,8 @@ var RUSHzero = document.getElementById("No-Rush");
 
 
 //set price
-var productPRICE = Number({{wf {&quot;path&quot;:&quot;price&quot;,&quot;type&quot;:&quot;Number&quot;\} }});
+window.sessionStorage.getItem("key");
+var productPRICE = Number("key");
 
 // add listener
 document.getElementById("product-QTY").addEventListener("change", update);
