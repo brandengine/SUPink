@@ -129,8 +129,7 @@ hpDisplayResult = document.getElementById("HP-display-number");
 
 //set defaults
 displayResult.textContent = Number(productPRICE) + Number(5.00);
-hpDisplayResult.textContent = Number(productPRICE) + Number(hpSMALL);
-hpDisplayResult.textContent = hpDisplayResult.textContent.toFixed(2);
+hpDisplayResult.textContent = (Number(productPRICE) + Number(hpSMALL)).toFixed(2);
 
 function update(){
 
