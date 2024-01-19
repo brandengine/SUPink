@@ -241,6 +241,22 @@ RUSHzero = document.getElementById("No-Rush");
 //Embroidery OPTIONS
 emQTY = document.getElementById("Embroidery-QTY").value;
 
+emneckTAG = document.getElementById("Embroidery-Neck-Tag");
+emprintTAG = document.getElementById("Embroidery-Tag-Print-Removal");
+emcutTAG = document.getElementById("Embroidery-Tag-Cut-Removal");
+
+//folding OPTIONS
+emfoldOPT = document.getElementById("Embroidery-Folding");
+emfoldBAG = document.getElementById("Embroidery-Fold-Bag");
+embandTAG = document.getElementById("Embroidery-Roll-Band-Tag");
+
+//sewing OPTIONS
+emwLABEL = document.getElementById("Embroidery-Woven-Label");
+emhTag = document.getElementById("Embroidery-Hang-Tag");
+emsideSEW = document.getElementById("Embroidery-4-sided-sew");
+emseamRIP = document.getElementById("Embroidery-Seam-Rip-Restitch");
+emseamCAPS = document.getElementById("Embroidery-SEAM-RIP-CAPS");
+
 //shipping OPTIONS
 emRUSHone = document.getElementById("Embroidery-1-2-DAY-TURN");
 emRUSHthree = document.getElementById("Embroidery-3-4-DAY-TURN");
