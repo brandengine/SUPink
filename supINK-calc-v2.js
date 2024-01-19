@@ -1,4 +1,4 @@
-var productQTY, colorAmount, result, productPRICE, displayResult, totalPRICE, carbonINK, puffINK, metalINK, fLOC, bLOC, sleeveDEC, neckTAG, printLOCs, hpResult, hpDisplayResult, hpQTY, hpSize; 
+var productQTY, colorAmount, result, productPRICE, displayResult, totalPRICE, carbonINK, puffINK, metalINK, fLOC, bLOC, sleeveDEC, neckTAG, printLOCs, hpResult, hpDisplayResult, hpQTY, hpSize, emQTY, emDisplayResult; 
 
 //input
 
@@ -46,6 +46,9 @@ var RUSHthree = document.getElementById("3-4-DAY-TURN");
 var RUSHfive = document.getElementById("5-6-DAY-TURN");
 var RUSHseven = document.getElementById("7-9-DAY-TURN");
 var RUSHzero = document.getElementById("No-Rush");
+
+//EM Embroidery START
+
 
 //HEAT PRESS START
 var hpSMALL = document.getElementById("Small-Print");
@@ -101,6 +104,9 @@ document.getElementById("5-6-DAY-TURN").addEventListener("change", update);
 document.getElementById("7-9-DAY-TURN").addEventListener("change", update);
 document.getElementById("No-Rush").addEventListener("change", update);
 
+//Embroidery OPTIONS
+document.getElementById("Embroidery-QTY").addEventListener("change", update);
+
 //HEAT PRESS OPTIONS
 document.getElementById("Transfer-QTY").addEventListener("change", update);
 document.getElementById("Small-Print").addEventListener("change", update);
@@ -121,6 +127,7 @@ document.getElementById("HP-No-Rush").addEventListener("change", update);
 console.log("has fired");
 displayResult = document.getElementById("display-number");
 hpDisplayResult = document.getElementById("HP-display-number");
+emDisplayResult = document.getElementById("EM-display-number");
 
 //set defaults
 displayResult.textContent = (Number(productPRICE) + Number(5.00)).toFixed(2);
@@ -190,6 +197,9 @@ RUSHthree = document.getElementById("3-4-DAY-TURN");
 RUSHfive = document.getElementById("5-6-DAY-TURN");
 RUSHseven = document.getElementById("7-9-DAY-TURN");
 RUSHzero = document.getElementById("No-Rush");
+
+//Embroidery OPTIONS
+emQTY = document.getElementById("Embroidery-QTY").value;
 
 //HEAT PRESS OPTIONS
 hpQTY = document.getElementById("Transfer-QTY").value;
@@ -274,6 +284,11 @@ result = ((Number(colorAmount) * Number(productQTY)) + productPRICE) * printLOCs
   }
 
   displayResult.textContent = result.toFixed(2);
+
+  //Embroidery CALC
+  emResult = productPRICE + Number(emQTY);
+
+  emDisplayResult.textContent = emResult.toFixed(2);
 
 
   //HEAT PRESS CALC
