@@ -65,6 +65,10 @@ var productPRICE = Number(4.95);
 // add listener
 document.getElementById("product-QTY").addEventListener("change", update);
 document.getElementById("color-QTY").addEventListener("change", update);
+document.getElementById("order-type-Multiple").addEventListener("change", update);
+document.getElementById("order-type-Printing").addEventListener("change", update);
+document.getElementById("order-type-Embroidery").addEventListener("change", update);
+document.getElementById("order-type-Transfers").addEventListener("change", update);
 //checkboxes SPECIALTY INKS
 document.getElementById("Carbon-Dye-Ink").addEventListener("change", update);
 document.getElementById("Metallic-Ink").addEventListener("change", update);
@@ -199,6 +203,9 @@ hpRUSHFIVE = document.getElementById("HP-5-6-DAY-TURN");
 hpRUSHSEVEN = document.getElementById("HP-7-9-DAY-TURN");
 hpRUSHZERO = document.getElementById("HP-No-Rush");
 
+//Element Hiding
+
+
 //PRINT CALC     
 result = ((Number(colorAmount) * Number(productQTY)) + productPRICE) * printLOCs;
 
@@ -291,6 +298,19 @@ result = ((Number(colorAmount) * Number(productQTY)) + productPRICE) * printLOCs
   }
 
   hpResult = productPRICE + (Number(hpQTY) * Number(hpSize));
+   //shipping CALC
+    if (hpRUSHTHREE.checked === true) {
+    hpResult = Number(hpResult) * Number(1.8);
+  }
+   if (hpRUSHFIVE.checked === true) {
+    hpResult = Number(hpResult) * Number(1.5);
+  }
+   if (hpRUSHSEVEN.checked === true) {
+    hpResult = Number(hpResult) * Number(1.3);
+  }
+    if (hpRUSHZERO.checked === true) {
+    hpResult = Number(hpResult) * Number(1);
+  }
    
 
   hpDisplayResult.textContent = hpResult.toFixed(2);
