@@ -60,14 +60,6 @@ var hpRUSHFIVE = document.getElementById("HP-5-6-DAY-TURN");
 var hpRUSHSEVEN = document.getElementById("HP-7-9-DAY-TURN");
 var hpRUSHZERO = document.getElementById("HP-No-Rush");
 
-
-//HEAT PRESS assign value
-hpSMALL = Number(7.65);
-hpLCHEST = Number(8.10);
-hpMED = Number(9.70);
-hpLRG = Number(11.45);
-hpXL = Number(15.10);
-
 //set price WF VAR
 var productPRICE = Number(4.95);
 
@@ -278,24 +270,22 @@ result = ((Number(colorAmount) * Number(productQTY)) + productPRICE) * printLOCs
     result = Number(result) * Number(1);
   }
 
-
-
   displayResult.textContent = result.toFixed(2);
+
 
   //HEAT PRESS CALC
   hpSize = Number(7.65);
-
   if (hpLCHEST.checked === true) {
-    hpSize = Number(hpLCHEST);
+    hpSize = Number(8.10);
   }
   if (hpMED.checked === true) {
-    hpSize = Number(hpMED);
+    hpSize = Number(9.70);
   }
   if (hpLRG.checked === true) {
-    hpSize = Number(hpLRG);
+    hpSize = Number(11.45);
   }
   if (hpXL.checked === true) {
-    hpSize = Number(hpXL);
+    hpSize = Number(15.10);
   }
   if (hpSMALL.checked === true) {
     hpSize = Number(7.65);
