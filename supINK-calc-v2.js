@@ -60,6 +60,10 @@ var emsideSEW = document.getElementById("Embroidery-4-sided-sew");
 var emseamRIP = document.getElementById("Embroidery-Seam-Rip-Restitch");
 var emseamCAPS = document.getElementById("Embroidery-SEAM-RIP-CAPS");
 var emUPCstick = document.getElementById("Embroidery-UPC-sticker");
+var emSOLVY = document.getElementById("Embroidery-Solvy");
+var emPATCHES = document.getElementById("Embroidery-Patches");
+var emPATCHAPP = document.getElementById("Embroidery-Patch-App");
+
 
 //shipping OPTIONS
 var emRUSHone = document.getElementById("Embroidery-1-2-DAY-TURN");
@@ -140,6 +144,10 @@ document.getElementById("Embroidery-Seam-Rip-Restitch").addEventListener("change
 document.getElementById("Embroidery-SEAM-RIP-CAPS").addEventListener("change", update);
 //sticker OPTIONS
 document.getElementById("Embroidery-UPC-sticker").addEventListener("change", update);
+//application OPTIONS
+document.getElementById("Embroidery-Solvy").addEventListener("change", update);
+document.getElementById("Embroidery-Patches").addEventListener("change", update);
+document.getElementById("Embroidery-Patch-App").addEventListener("change", update);
 //shipping OPTIONS
 document.getElementById("Embroidery-1-2-DAY-TURN").addEventListener("change", update);
 document.getElementById("Embroidery-3-4-DAY-TURN").addEventListener("change", update);
@@ -256,6 +264,11 @@ emhTag = document.getElementById("Embroidery-Hang-Tag");
 emsideSEW = document.getElementById("Embroidery-4-sided-sew");
 emseamRIP = document.getElementById("Embroidery-Seam-Rip-Restitch");
 emseamCAPS = document.getElementById("Embroidery-SEAM-RIP-CAPS");
+
+//application OPTIONS
+emSOLVY = document.getElementById("Embroidery-Solvy");
+emPATCHES = document.getElementById("Embroidery-Patches");
+emPATCHAPP = document.getElementById("Embroidery-Patch-App");
 
 //shipping OPTIONS
 emRUSHone = document.getElementById("Embroidery-1-2-DAY-TURN");
@@ -390,6 +403,13 @@ result = ((Number(colorAmount) * Number(productQTY)) + productPRICE) * printLOCs
 //sticker CALC
   if (emUPCstick.checked === true) {
     emResult = Number(emResult) + Number(0.15);
+  }
+//application CALC
+  if (emSOLVY.checked === true) {
+    emResult = Number(emResult) + Number(0.75);
+  }
+   if (emPATCHAPP.checked === true) {
+    emResult = Number(emResult) + Number(5.00);
   }
 //shipping CALC
   if (emRUSHone.checked === true) {
