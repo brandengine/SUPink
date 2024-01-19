@@ -48,7 +48,6 @@ var RUSHseven = document.getElementById("7-9-DAY-TURN");
 var RUSHzero = document.getElementById("No-Rush");
 
 //HEAT PRESS START
-var hpQTY = document.getElementById("Transfer-QTY").value;
 var hpSMALL = document.getElementById("Small-Print");
 var hpLCHEST = document.getElementById("Left-Chest-Print");
 var hpMED = document.getElementById("Medium-Print");
