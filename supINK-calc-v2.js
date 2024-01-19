@@ -1,4 +1,4 @@
-var productQTY, colorAmount, result, productPRICE, displayResult, totalPRICE, carbonINK, puffINK, metalINK, fLOC, bLOC, sleeveDEC, neckTAG, printLOCs, hpResult, hpDisplayResult, hpQTY; 
+var productQTY, colorAmount, result, productPRICE, displayResult, totalPRICE, carbonINK, puffINK, metalINK, fLOC, bLOC, sleeveDEC, neckTAG, printLOCs, hpResult, hpDisplayResult, hpQTY, hpSize; 
 
 //input
 
@@ -68,7 +68,7 @@ hpMED = Number(9.70);
 hpLRG = Number(11.45);
 hpXL = Number(15.10);
 
-//set price
+//set price WF VAR
 var productPRICE = Number(4.95);
 
 // add listener
@@ -128,7 +128,7 @@ displayResult = document.getElementById("display-number");
 hpDisplayResult = document.getElementById("HP-display-number");
 
 //set defaults
-displayResult.textContent = Number(productPRICE) + Number(5.00);
+displayResult.textContent = (Number(productPRICE) + Number(5.00)).toFixed(2);
 hpDisplayResult.textContent = (Number(productPRICE) + Number(hpSMALL)).toFixed(2);
 
 function update(){
@@ -283,10 +283,27 @@ result = ((Number(colorAmount) * Number(productQTY)) + productPRICE) * printLOCs
   displayResult.textContent = result.toFixed(2);
 
   //HEAT PRESS CALC
+  hpSize = Number(hpSMALL);
 
-  hpResult = Number(hpQTY) + productPRICE;
+  if (hpLCHEST.checked === true) {
+    hpSize = Number(hpLCHEST);
+  }
+  if (hpMED.checked === true) {
+    hpSize = Number(hpMED);
+  }
+  if (hpLRG.checked === true) {
+    hpSize = Number(hpLRG);
+  }
+  if (hpXL.checked === true) {
+    hpSize = Number(hpXL);
+  }
+  if (hpSMALL.checked === true) {
+    hpSize = Number(hpSMALL);
+  }
+
+  hpResult = (Number(hpQTY) * Number(hpSize)) + productPRICE;
+   
 
   hpDisplayResult.textContent = hpResult.toFixed(2);
  
 }
-
