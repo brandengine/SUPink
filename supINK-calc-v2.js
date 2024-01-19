@@ -194,25 +194,12 @@ frontDEC = document.getElementById("Front-Decoration");
 backDEC = document.getElementById("Back-Decoration");
 sleeveDEC = document.getElementById("Sleeve-Decoration");
 otherDEC = document.getElementById("Other-Location-Decoration");
+
 //checkboxes LOCATIONS Logic
-   if (frontDEC.checked === true) {
-         fLOC = Number(1); } else {
-            fLOC = Number(0);
-         }
-   if (backDEC.checked === true) {
-         bLOC = Number(1);} else {
-            bLOC = Number(0);
-         }
-
-   if (sleeveDEC.checked === true) {
-         sLOC = Number(1);} else {
-            sLOC = Number(0);
-         }
-
-   if (otherDEC.checked === true) {
-         oLOC = Number(1);} else {
-            oLOC = Number(0);
-         }
+fLOC = frontDEC.checked ? 1 : 0;
+bLOC = backDEC.checked ? 1 : 0;
+sLOC = sleeveDEC.checked ? 1 : 0;
+oLOC = otherDEC.checked ? 1 : 0;
 
    printLOCs = Number(fLOC) + Number(bLOC) + Number(sLOC) + Number(oLOC);
    if (printLOCs < 2){
