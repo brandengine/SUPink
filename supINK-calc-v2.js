@@ -48,7 +48,7 @@ var RUSHseven = document.getElementById("7-9-DAY-TURN");
 var RUSHzero = document.getElementById("No-Rush");
 
 //HEAT PRESS START
-var hpQTY = document.getElementById("Transfer-QTY");
+var hpQTY = document.getElementById("Transfer-QTY").value;
 var hpSMALL = document.getElementById("Small-Print");
 var hpLCHEST = document.getElementById("Left-Chest-Print");
 var hpMED = document.getElementById("Medium-Print");
@@ -283,7 +283,7 @@ result = ((Number(colorAmount) * Number(productQTY)) + productPRICE) * printLOCs
   displayResult.textContent = result.toFixed(2);
 
   //HEAT PRESS CALC
-  hpSize = Number(hpSMALL);
+  hpSize = Number(7.65);
 
   if (hpLCHEST.checked === true) {
     hpSize = Number(hpLCHEST);
@@ -298,10 +298,10 @@ result = ((Number(colorAmount) * Number(productQTY)) + productPRICE) * printLOCs
     hpSize = Number(hpXL);
   }
   if (hpSMALL.checked === true) {
-    hpSize = Number(hpSMALL);
+    hpSize = Number(7.65);
   }
 
-  hpResult = (Number(hpQTY) * Number(hpSize)) + productPRICE;
+  hpResult = productPRICE + (Number(hpQTY) * Number(hpSize));
    
 
   hpDisplayResult.textContent = hpResult.toFixed(2);
